@@ -1,0 +1,24 @@
+# SlotFill vertical pack: clinics, dental and med spas.
+# A pack is data, not code: offsets, templates and reply keywords.
+# See docs/packs.md for the full format and how to contribute a pack.
+name: clinic
+vertical: clinic
+offer_expiry_minutes: 30
+max_offers: 3
+reminders:
+  - offset: 48h
+    template: reminder
+  - offset: 24h
+    template: reminder
+  - offset: 2h
+    template: reminder
+templates:
+  reminder: "Hi {name}, this is {business} reminding you of your {service} on {start}. Reply YES to confirm, or RESCHEDULE if you need to move it."
+  offer: "Hi {name}, good news: a {service} slot just opened at {business} on {start}. Reply YES within {expiry_minutes} minutes to take it. The first confirmed reply gets the slot, so please only reply if you can make it."
+  stood_down: "Hi {name}, thanks for being on our waitlist. The {service} slot on {start} has just been filled by another patient, so we have stood down your offer. You are still on the waitlist at {business} and we will ask you first next time."
+  booked: "Hi {name}, you are booked in: {service} at {business} on {start}. Please arrive 10 minutes early, and reply RESCHEDULE if anything changes."
+  confirm_ack: "Hi {name}, thank you, your {service} on {start} at {business} is confirmed. We look forward to seeing you."
+  reschedule_ack: "Thanks, we have noted that you need to reschedule. {business} will contact you with alternative times. Your original slot may be offered to the waitlist."
+keywords:
+  confirm: ["yes", "confirm", "confirmed", "ok", "okay", "y"]
+  reschedule: ["reschedule", "move", "change", "rebook", "different time"]

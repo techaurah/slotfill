@@ -1,0 +1,20 @@
+# SlotFill vertical pack: salons, barbershops and beauty.
+name: salon
+vertical: salon
+offer_expiry_minutes: 20
+max_offers: 3
+reminders:
+  - offset: 24h
+    template: reminder
+  - offset: 2h
+    template: reminder
+templates:
+  reminder: "Hi {name}, a little reminder from {business}: your {service} is on {start}. Reply YES to confirm, or RESCHEDULE if you need a different time."
+  offer: "Hi {name}, a {service} appointment just opened at {business} on {start}. Want it? Reply YES within {expiry_minutes} minutes. First confirmed reply gets it."
+  stood_down: "Hi {name}, thanks for being on our waitlist. That {service} slot on {start} was just taken, so we have stood down your offer. You are still on the waitlist at {business} and you will be first to hear next time."
+  booked: "Hi {name}, it is yours: {service} at {business} on {start}. See you then. Reply RESCHEDULE if anything changes."
+  confirm_ack: "Hi {name}, perfect, your {service} on {start} at {business} is confirmed. See you soon."
+  reschedule_ack: "No problem, we have noted you need to move your appointment. {business} will be in touch with new times. Your slot may be offered to the waitlist."
+keywords:
+  confirm: ["yes", "confirm", "confirmed", "ok", "okay", "y"]
+  reschedule: ["reschedule", "move", "change", "rebook", "different time"]

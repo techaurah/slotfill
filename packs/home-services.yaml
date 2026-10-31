@@ -1,0 +1,20 @@
+# SlotFill vertical pack: home services (cleaning, plumbing, HVAC, handyperson).
+name: home-services
+vertical: home-services
+offer_expiry_minutes: 60
+max_offers: 3
+reminders:
+  - offset: 24h
+    template: reminder
+  - offset: 1h
+    template: reminder
+templates:
+  reminder: "Hi {name}, this is {business} confirming your {service} visit on {start}. Our technician will aim to arrive within the first 30 minutes of the window. Reply YES to confirm, or RESCHEDULE to move it."
+  offer: "Hi {name}, a {service} slot just opened with {business} on {start}. Reply YES within {expiry_minutes} minutes to take it. First confirmed reply gets the slot."
+  stood_down: "Hi {name}, thanks for being on our waitlist. The {service} slot on {start} has been filled, so we have stood down your offer. You are still on the waitlist at {business} and we will ask you first next time."
+  booked: "Hi {name}, you are booked in: {service} with {business} on {start}. We will confirm the technician's name before the visit. Reply RESCHEDULE if anything changes."
+  confirm_ack: "Hi {name}, thank you, your {service} visit on {start} with {business} is confirmed."
+  reschedule_ack: "Thanks, we have noted that you need to reschedule your visit. {business} will contact you with alternative windows. Your slot may be offered to the waitlist."
+keywords:
+  confirm: ["yes", "confirm", "confirmed", "ok", "okay", "y"]
+  reschedule: ["reschedule", "move", "change", "rebook", "different time"]
