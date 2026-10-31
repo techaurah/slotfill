@@ -1,0 +1,5 @@
+name,contact,service,earliest,latest
+Ana Ruiz,ana@example.com,checkup,2026-11-03 08:00,2026-11-03 12:00
+Ben Cole,ben@example.com,checkup,2026-11-03 09:00,2026-11-03 17:00
+Cara Diaz,cara@example.com,checkup,2026-11-03 00:00,2026-11-03 23:59
+Dan Fox,dan@example.com,vaccination,2026-11-03 08:00,2026-11-03 12:00
