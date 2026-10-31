@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/techaurah/slotfill/discussions
+    about: Ask how SlotFill works, or float an idea before opening an issue.
+  - name: Documentation
+    url: https://github.com/techaurah/slotfill/tree/main/docs
+    about: Setup, pack format and notifier contracts live in docs/.
+  - name: Report a security vulnerability
+    url: https://github.com/techaurah/slotfill/security/advisories/new
+    about: Please do not open a public issue for security problems. See SECURITY.md.
