@@ -1,0 +1,25 @@
+slotfill/                              No-show recovery: reminders and waitlist backfill
+|-- src/slotfill/                      the application package
+|   |-- scheduler.py                   SlotfillService: one full cycle, reply routing
+|   |-- reminders.py                   reminder engine and reply keyword classification
+|   |-- backfill.py                    waitlist backfill state machine
+|   |-- waitlist.py                    CSV waitlist loading and slot matching
+|   |-- store.py                       SQLite log of every send and offer
+|   |-- config.py                      settings and vertical pack loading
+|   |-- cli.py                         entry points: demo, run-cycle, offers
+|   |-- calendars/                     calendar adapters behind one interface
+|   |   |-- base.py                    CalendarAdapter contract and Appointment type
+|   |   |-- fake.py                    in-memory calendar, fully working
+|   |   |-- google.py                  validates config only; live API not wired in v0.1
+|   |   `-- caldav.py                  documented stub, not implemented
+|   `-- notify/                        notifiers behind one interface
+|       |-- base.py                    Notifier interface plus dry-run log notifier (default)
+|       `-- email.py                   SMTP email, the one live channel in v0.1
+|-- packs/                             vertical packs as data (clinic, salon, home-services)
+|-- examples/                          demo walkthrough and example waitlist CSV
+|-- docs/                              setup, pack format and notifier contracts
+|   `-- assets/                        README visuals (hero, architecture, workflow, structure)
+|-- tests/                             22 offline tests against the fake calendar
+|-- pyproject.toml                     Python 3.11+; PyYAML is the only runtime dependency
+|-- .env.example                       every setting, with safe dry-run defaults
+`-- README.md                          project overview and quickstart

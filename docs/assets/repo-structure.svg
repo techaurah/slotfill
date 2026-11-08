@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="744" viewBox="0 0 1180 744" role="img" aria-label="SlotFill repository structure">
+<rect width="1180" height="744" rx="18" fill="#0B1F3A"/>
+<text x="44" y="50" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#EAF6FF">Repository structure</text>
+<text x="44" y="88" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#00CEFF">slotfill/</text>
+<text x="44" y="117" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">├─ src/slotfill/</text>
+<text x="500" y="117" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">the application package</text>
+<text x="44" y="146" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ scheduler.py</text>
+<text x="500" y="146" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">SlotfillService: one full cycle, reply routing</text>
+<text x="44" y="175" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ reminders.py</text>
+<text x="500" y="175" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">reminder engine and reply keyword classification</text>
+<text x="44" y="204" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ backfill.py</text>
+<text x="500" y="204" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">waitlist backfill state machine</text>
+<text x="44" y="233" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ waitlist.py</text>
+<text x="500" y="233" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">CSV waitlist loading and slot matching</text>
+<text x="44" y="262" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ store.py</text>
+<text x="500" y="262" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">SQLite log of every send and offer</text>
+<text x="44" y="291" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ config.py</text>
+<text x="500" y="291" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">settings and vertical pack loading</text>
+<text x="44" y="320" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ cli.py</text>
+<text x="500" y="320" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">entry points: demo, run-cycle, offers</text>
+<text x="44" y="349" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   ├─ calendars/</text>
+<text x="500" y="349" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">calendar adapters behind one interface</text>
+<text x="44" y="378" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   │   ├─ base.py</text>
+<text x="500" y="378" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">CalendarAdapter contract and Appointment type</text>
+<text x="44" y="407" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   │   ├─ fake.py</text>
+<text x="500" y="407" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">in-memory calendar, fully working</text>
+<text x="44" y="436" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   │   ├─ google.py</text>
+<text x="500" y="436" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">validates config only; live API not wired in v0.1</text>
+<text x="44" y="465" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   │   └─ caldav.py</text>
+<text x="500" y="465" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">documented stub, not implemented</text>
+<text x="44" y="494" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│   └─ notify/</text>
+<text x="500" y="494" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">notifiers behind one interface</text>
+<text x="44" y="523" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│       ├─ base.py</text>
+<text x="500" y="523" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Notifier interface plus dry-run log notifier (default)</text>
+<text x="44" y="552" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">│       └─ email.py</text>
+<text x="500" y="552" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">SMTP email, the one live channel in v0.1</text>
+<text x="44" y="581" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">├─ packs/</text>
+<text x="500" y="581" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">vertical packs as data: clinic, salon, home-services</text>
+<text x="44" y="610" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">├─ examples/</text>
+<text x="500" y="610" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">demo walkthrough and example waitlist CSV</text>
+<text x="44" y="639" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">├─ docs/</text>
+<text x="500" y="639" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">setup, pack format and notifier contracts</text>
+<text x="44" y="668" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">├─ tests/</text>
+<text x="500" y="668" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">22 offline tests against the fake calendar</text>
+<text x="44" y="697" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="16" font-weight="400" fill="#EAF6FF">└─ pyproject.toml</text>
+<text x="500" y="697" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Python 3.11+; PyYAML is the only runtime dependency</text>
+</svg>

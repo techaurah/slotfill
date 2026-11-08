@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="852" viewBox="0 0 1240 852" role="img" aria-label="SlotFill architecture: entry points call SlotfillService, which drives the reminder and backfill engines over pluggable calendar and notifier adapters, with a vertical pack, a CSV waitlist and a SQLite state store">
+<rect width="1240" height="852" rx="18" fill="#0B1F3A"/>
+<text x="48" y="54" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#EAF6FF">SlotFill architecture</text>
+<text x="48" y="82" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#9DB8D2">Deterministic, no LLM anywhere: one service, two engines, pluggable adapters, one audit store.</text>
+<rect x="150" y="106" width="440" height="64" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="172" y="146" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#EAF6FF">CLI · cli.py</text>
+<text x="400" y="146" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14" fill="#9DB8D2">demo · run-cycle · offers</text>
+<rect x="650" y="106" width="440" height="64" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="672" y="146" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#EAF6FF">Your scheduler</text>
+<text x="865" y="146" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" fill="#9DB8D2">cron or systemd timer</text>
+<line x1="370" y1="170" x2="370" y2="187" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="364,187 370,198 376,187" fill="#00CEFF"/>
+<line x1="870" y1="170" x2="870" y2="187" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="864,187 870,198 876,187" fill="#00CEFF"/>
+<rect x="270" y="196" width="700" height="118" rx="12" fill="#12294D" stroke="#00CEFF" stroke-width="2"/>
+<text x="292" y="232" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#00CEFF">SlotfillService · scheduler.py</text>
+<text x="292" y="258" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">run_cycle(now): read appointments, send reminders, expire offers,</text>
+<text x="292" y="280" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">then offer every cancellation to the waitlist.</text>
+<text x="292" y="302" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">handle_reply(contact, text): routes YES and RESCHEDULE replies.</text>
+<line x1="480" y1="314" x2="480" y2="331" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="474,331 480,342 486,331" fill="#00CEFF"/>
+<line x1="760" y1="314" x2="760" y2="331" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="754,331 760,342 766,331" fill="#00CEFF"/>
+<rect x="120" y="340" width="480" height="122" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="142" y="376" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#EAF6FF">ReminderEngine · reminders.py</text>
+<text x="142" y="402" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Fires reminders at the pack offsets (clinic: 48h,</text>
+<text x="142" y="424" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">24h, 2h) inside a 1 hour catch-up grace window.</text>
+<text x="142" y="446" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Deduped through the store: never sent twice.</text>
+<rect x="640" y="340" width="480" height="122" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="662" y="376" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#EAF6FF">BackfillEngine · backfill.py</text>
+<text x="662" y="402" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Matches each freed slot to the waitlist in CSV</text>
+<text x="662" y="424" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">order, creates offers with an expiry, and on the</text>
+<text x="662" y="446" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">first accept writes back and stands the rest down.</text>
+<line x1="360" y1="462" x2="360" y2="479" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="354,479 360,490 366,479" fill="#00CEFF"/>
+<line x1="880" y1="462" x2="880" y2="479" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="874,479 880,490 886,479" fill="#00CEFF"/>
+<rect x="48" y="488" width="368" height="124" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="70" y="524" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Vertical pack · packs/*.yaml</text>
+<text x="70" y="550" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Data, not code: clinic, salon, home-services.</text>
+<text x="70" y="572" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Offsets, templates, reply keywords, offer</text>
+<text x="70" y="594" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">expiry (30 min) and max offers (3).</text>
+<rect x="436" y="488" width="368" height="124" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="458" y="524" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Waitlist · waitlist.py + CSV</text>
+<text x="458" y="550" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">name, contact, service, earliest, latest.</text>
+<text x="458" y="572" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Row order is offer order; an entry matches</text>
+<text x="458" y="594" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">on service and its acceptable time window.</text>
+<rect x="824" y="488" width="368" height="124" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="846" y="524" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">State store · store.py (SQLite)</text>
+<text x="846" y="550" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Tables: sends, offers, reminders_sent,</text>
+<text x="846" y="572" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">appointment_state. Every send and offer is</text>
+<text x="846" y="594" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">logged, so cycles are idempotent and auditable.</text>
+<line x1="360" y1="612" x2="360" y2="635" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="354,635 360,646 366,635" fill="#00CEFF"/>
+<line x1="880" y1="612" x2="880" y2="635" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="874,635 880,646 886,635" fill="#00CEFF"/>
+<rect x="48" y="644" width="568" height="176" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="70" y="680" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#EAF6FF">Calendar adapters · calendars/</text>
+<text x="70" y="706" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">One interface: list, create, report cancellations.</text>
+<text x="70" y="728" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">FakeCalendar: in-memory, fully working (demo, tests).</text>
+<text x="70" y="750" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">Google: validates config, fails clearly. Live API calls</text>
+<text x="70" y="772" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">are NOT wired in v0.1; the contract is in docs/setup.md.</text>
+<text x="70" y="794" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">CalDAV: documented stub, raises NotImplementedError.</text>
+<rect x="624" y="644" width="568" height="176" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<text x="646" y="680" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#EAF6FF">Notifiers · notify/</text>
+<text x="646" y="706" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">One interface: send(recipient, subject, body, kind).</text>
+<text x="646" y="728" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">LogNotifier: dry-run default, sends nothing at all.</text>
+<text x="646" y="750" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">EmailNotifier: SMTP email, the one live channel.</text>
+<text x="646" y="772" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">WhatsApp and SMS: written contracts in</text>
+<text x="646" y="794" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" fill="#9DB8D2">docs/notifiers.md, not built yet.</text>
+</svg>

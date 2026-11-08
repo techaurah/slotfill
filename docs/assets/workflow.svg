@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="478" viewBox="0 0 1240 478" role="img" aria-label="The SlotFill recovery cycle: a cycle sends reminders, detects a cancellation and offers the slot; the first YES reply wins, the slot is written back and the other offers are stood down">
+<rect width="1240" height="478" rx="18" fill="#0B1F3A"/>
+<text x="48" y="54" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#EAF6FF">The recovery cycle</text>
+<text x="48" y="82" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#9DB8D2">How an empty slot becomes a filled slot, with no human chasing the waitlist.</text>
+<text x="48" y="122" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#00CEFF">ONE CYCLE · run_cycle(now)</text>
+<rect x="48" y="136" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="78" cy="166" r="14" fill="#00CEFF"/>
+<text x="78" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">1</text>
+<text x="102" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Cycle runs</text>
+<text x="68" y="200" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Reads appointments for the</text>
+<text x="68" y="220" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">next 7 days from the</text>
+<text x="68" y="240" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">calendar adapter.</text>
+<rect x="344" y="136" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="374" cy="166" r="14" fill="#00CEFF"/>
+<text x="374" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">2</text>
+<text x="398" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Reminders sent</text>
+<text x="364" y="200" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Due reminders fire at pack</text>
+<text x="364" y="220" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">offsets. The store dedups,</text>
+<text x="364" y="240" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">so none is sent twice.</text>
+<rect x="640" y="136" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="670" cy="166" r="14" fill="#00CEFF"/>
+<text x="670" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">3</text>
+<text x="694" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Cancellation found</text>
+<text x="660" y="200" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">The adapter reports each</text>
+<text x="660" y="220" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">cancellation exactly once</text>
+<text x="660" y="240" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">to the backfill engine.</text>
+<rect x="936" y="136" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="966" cy="166" r="14" fill="#00CEFF"/>
+<text x="966" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">4</text>
+<text x="990" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Offers go out</text>
+<text x="956" y="200" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Waitlist matched in CSV</text>
+<text x="956" y="220" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">order, up to max offers.</text>
+<text x="956" y="240" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Each offer has an expiry.</text>
+<line x1="312" y1="195" x2="335" y2="195" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="335,189 346,195 335,201" fill="#00CEFF"/>
+<line x1="608" y1="195" x2="631" y2="195" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="631,189 642,195 631,201" fill="#00CEFF"/>
+<line x1="904" y1="195" x2="927" y2="195" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="927,189 938,195 927,201" fill="#00CEFF"/>
+<text x="48" y="292" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#00CEFF">WHEN A CLIENT REPLIES · handle_reply(contact, text)</text>
+<rect x="48" y="306" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="78" cy="336" r="14" fill="#00CEFF"/>
+<text x="78" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">5</text>
+<text x="102" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">First YES wins</text>
+<text x="68" y="370" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Replies are matched to pack</text>
+<text x="68" y="390" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">keywords. The first confirmed</text>
+<text x="68" y="410" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">accept takes the slot.</text>
+<rect x="344" y="306" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="374" cy="336" r="14" fill="#00CEFF"/>
+<text x="374" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">6</text>
+<text x="398" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Written back</text>
+<text x="364" y="370" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">The replacement appointment</text>
+<text x="364" y="390" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">is created on the calendar;</text>
+<text x="364" y="410" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">the winner is told: booked.</text>
+<rect x="640" y="306" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="670" cy="336" r="14" fill="#00CEFF"/>
+<text x="670" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">7</text>
+<text x="694" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Others stood down</text>
+<text x="660" y="370" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Every other pending offer</text>
+<text x="660" y="390" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">for the slot is stood down</text>
+<text x="660" y="410" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">with a polite message.</text>
+<rect x="936" y="306" width="264" height="118" rx="12" fill="#12294D" stroke="#2A5A8F" stroke-width="1.5"/>
+<circle cx="966" cy="336" r="14" fill="#00CEFF"/>
+<text x="966" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0B1F3A" text-anchor="middle">8</text>
+<text x="990" y="342" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="16.5" font-weight="700" fill="#EAF6FF">Expiry and audit</text>
+<text x="956" y="370" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Unanswered offers expire.</text>
+<text x="956" y="390" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">Every send and offer is in</text>
+<text x="956" y="410" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#9DB8D2">the SQLite store to audit.</text>
+<line x1="312" y1="365" x2="335" y2="365" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="335,359 346,365 335,371" fill="#00CEFF"/>
+<line x1="608" y1="365" x2="631" y2="365" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="631,359 642,365 631,371" fill="#00CEFF"/>
+<line x1="904" y1="365" x2="927" y2="365" stroke="#00CEFF" stroke-width="2.5"/>
+<polygon points="927,359 938,365 927,371" fill="#00CEFF"/>
+</svg>
