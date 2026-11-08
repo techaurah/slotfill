@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="494" viewBox="0 0 1180 494" role="img" aria-label="Real SlotFill demo output: a cancellation is detected, reminders and offers go out, Ben Cole replies YES and is booked, and the other offers are stood down">
+<rect width="1180" height="494" rx="18" fill="#0B1F3A"/>
+<circle cx="42" cy="36" r="7" fill="#00CEFF"/><circle cx="66" cy="36" r="7" fill="#9DB8D2"/><circle cx="90" cy="36" r="7" fill="#2A5A8F"/>
+<text x="112" y="42" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#EAF6FF">Real demo output</text>
+<text x="1136" y="42" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14" fill="#9DB8D2" text-anchor="end">slotfill demo</text>
+<text x="44" y="78" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">SlotFill demo: one clinic morning, fully offline, nothing sent</text>
+<text x="44" y="104" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#9DB8D2" xml:space="preserve">Business: BrightSmile Clinic   Now: Mon 02 Nov 2026 09:00</text>
+<text x="44" y="130" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">Step 1: Tom Reed cancels tomorrow&#x27;s 10:00 checkup (A-101).</text>
+<text x="44" y="156" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">Step 2: Run one SlotFill cycle (reminders + backfill offers).</text>
+<text x="44" y="182" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#9DB8D2" xml:space="preserve">  [notify:reminder] To: maria@example.com</text>
+<text x="44" y="208" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#9DB8D2" xml:space="preserve">  [notify:offer] To: ana@example.com</text>
+<text x="44" y="234" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#9DB8D2" xml:space="preserve">...</text>
+<text x="44" y="260" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#00CEFF" xml:space="preserve">  Cycle summary: {&#x27;reminders_sent&#x27;: 2, &#x27;offers_expired&#x27;: 0, &#x27;cancellations&#x27;: 1, &#x27;offers_created&#x27;: 3}</text>
+<text x="44" y="286" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">Step 3: Ben Cole (2nd on the waitlist) replies YES first.</text>
+<text x="44" y="312" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#00CEFF" xml:space="preserve">  Reply action: backfill_accepted:fake-1</text>
+<text x="44" y="338" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">Step 4: Calendar after backfill (note the new appointment):</text>
+<text x="44" y="364" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">   fake-1  Tue 03 Nov 10:00  checkup      Ben Cole [confirmed]</text>
+<text x="44" y="390" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#00CEFF" xml:space="preserve">  offer #2  Ben Cole   slot 2026-11-03T10:00:00  status: accepted</text>
+<text x="44" y="416" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#9DB8D2" xml:space="preserve">  offer #1  Ana Ruiz   slot 2026-11-03T10:00:00  status: stood_down</text>
+<text x="44" y="442" font-family="Consolas,Menlo,'DejaVu Sans Mono',monospace" font-size="14.5" fill="#EAF6FF" xml:space="preserve">Total messages logged in the store: 8</text>
+</svg>
